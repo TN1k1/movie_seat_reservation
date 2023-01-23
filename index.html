@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <form id="select-movie-form" class="movie-form">
+        <label class="w-100">
+          Válassz filmet!
+          <select name="selectedMovie">
+            <option value="1">Avengers (1750 Ft)</option>
+            <option value="2">Joker (1600 Ft)</option>
+            <option value="3">Toy Story 4 (900 Ft)</option>
+            <option value="4" selected="selected">The Lion King (1200 Ft)</option>
+          </select>
+        </label>
+      </form>
+      <ul class="showcase">
+        <li>
+          <div class="seat-preview"></div>
+          <small>Szabad</small>
+        </li>
+        <li>
+          <div class="seat-preview occupied"></div>
+          <small>Foglalt</small>
+        </li>
+        <li>
+          <div class="seat-preview selected"></div>
+          <small>Kiválasztva</small>
+        </li>
+      </ul>
+      <div class="movie-inner-container">
+        <div class="screen"></div>
+        <div class="seat-row">
+          <div class="row-symbol"></div>
+          <div class="column-number">1</div>
+          <div class="column-number">2</div>
+          <div class="column-number">3</div>
+          <div class="column-number">4</div>
+          <div class="column-number">5</div>
+          <div class="column-number">6</div>
+          <div class="column-number">7</div>
+          <div class="column-number">8</div>
+        </div>
+        <div class="seat-row">
+          <span class="row-symbol">A</span>
+          <div class="seat" data-row="A" data-seat="1"></div>
+          <div class="seat" data-row="A" data-seat="2"></div>
+          <div class="seat" data-row="A" data-seat="3"></div>
+          <div class="seat" data-row="A" data-seat="4"></div>
+          <div class="seat" data-row="A" data-seat="5"></div>
+          <div class="seat" data-row="A" data-seat="6"></div>
+          <div class="seat" data-row="A" data-seat="7"></div>
+          <div class="seat" data-row="A" data-seat="8"></div>
+        </div>
+
+        <div class="seat-row">
+          <span class="row-symbol">B</span>
+          <div class="seat" data-row="B" data-seat="1"></div>
+          <div class="seat" data-row="B" data-seat="2"></div>
+          <div class="seat" data-row="B" data-seat="3"></div>
+          <div class="seat" data-row="B" data-seat="4"></div>
+          <div class="seat" data-row="B" data-seat="5"></div>
+          <div class="seat" data-row="B" data-seat="6"></div>
+          <div class="seat" data-row="B" data-seat="7"></div>
+          <div class="seat" data-row="B" data-seat="8"></div>
+        </div>
+
+        <div class="seat-row">
+          <span class="row-symbol">C</span>
+          <div class="seat" data-row="C" data-seat="1"></div>
+          <div class="seat" data-row="C" data-seat="2"></div>
+          <div class="seat" data-row="C" data-seat="3"></div>
+          <div class="seat" data-row="C" data-seat="4"></div>
+          <div class="seat" data-row="C" data-seat="5"></div>
+          <div class="seat" data-row="C" data-seat="6"></div>
+          <div class="seat" data-row="C" data-seat="7"></div>
+          <div class="seat" data-row="C" data-seat="8"></div>
+        </div>
+
+        <div class="seat-row">
+          <span class="row-symbol">D</span>
+          <div class="seat" data-row="D" data-seat="1"></div>
+          <div class="seat" data-row="D" data-seat="2"></div>
+          <div class="seat occupied" data-row="D" data-seat="3"></div>
+          <div class="seat occupied" data-row="D" data-seat="4"></div>
+          <div class="seat" data-row="D" data-seat="5"></div>
+          <div class="seat selected" data-row="D" data-seat="6"></div>
+          <div class="seat" data-row="D" data-seat="7"></div>
+          <div class="seat" data-row="D" data-seat="8"></div>
+        </div>
+
+        <div class="seat-row">
+          <span class="row-symbol">E</span>
+          <div class="seat" data-row="E" data-seat="1"></div>
+          <div class="seat" data-row="E" data-seat="2"></div>
+          <div class="seat occupied" data-row="E" data-seat="3"></div>
+          <div class="seat occupied" data-row="E" data-seat="4"></div>
+          <div class="seat occupied" data-row="E" data-seat="5"></div>
+          <div class="seat occupied" data-row="E" data-seat="6"></div>
+          <div class="seat occupied" data-row="E" data-seat="7"></div>
+          <div class="seat" data-row="E" data-seat="8"></div>
+        </div>
+
+        <div class="seat-row">
+          <span class="row-symbol">F</span>
+          <div class="seat" data-row="F" data-seat="1"></div>
+          <div class="seat" data-row="F" data-seat="2"></div>
+          <div class="seat" data-row="F" data-seat="3"></div>
+          <div class="seat selected" data-row="F" data-seat="4"></div>
+          <div class="seat selected" data-row="F" data-seat="5"></div>
+          <div class="seat selected" data-row="F" data-seat="6"></div>
+          <div class="seat" data-row="F" data-seat="7"></div>
+          <div class="seat" data-row="F" data-seat="8"></div>
+        </div>
+      </div>
+
+      <p class="text text-center">
+        Kiválasztottál
+        <span id="count">3</span>
+        széket, aminek az ára összesen:
+        <span id="total">3600</span>
+        Ft.
+      </p>
+      <form id="book-seats">
+        <input type="text" class="mb-2" name="name" placeholder="Név" required="" value="" />
+        <button type="submit" class="btn btn-success btn-sm">Foglalás</button>
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
